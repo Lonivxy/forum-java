@@ -1,7 +1,8 @@
 package pub.developers.forum.common.support;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.*;
 
@@ -10,8 +11,8 @@ import java.util.concurrent.*;
  * @create 2020/10/22
  * @desc
  **/
-@Slf4j
 public class ExecutorFactory {
+    private static final Logger log = LoggerFactory.getLogger(ExecutorFactory.class);
 
     public static ExecutorService getExecutorService(Class<?> cls, int fixedThreads) {
         return new ThreadPoolExecutor(fixedThreads, fixedThreads,

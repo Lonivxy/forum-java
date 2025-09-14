@@ -1,7 +1,5 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import pub.developers.forum.common.exception.BizException;
 
 /**
@@ -9,8 +7,6 @@ import pub.developers.forum.common.exception.BizException;
  * @create 20/7/23
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum UserRoleEn {
     /**
      *
@@ -22,6 +18,19 @@ public enum UserRoleEn {
 
     private String value;
     private String desc;
+
+    UserRoleEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static UserRoleEn getEntity(String value) {
         for (UserRoleEn entity : values()) {

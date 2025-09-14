@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/7/30
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum MessageTypeEn {
     USER_REGISTER_NOTIFY_ADMIN("USER_REGISTER_NOTIFY_ADMIN", "新用户注册通知管理员"),
     APPROVAL_ARTICLE("APPROVAL_ARTICLE", "点赞文章"),
@@ -22,6 +17,19 @@ public enum MessageTypeEn {
     ;
     private String value;
     private String desc;
+
+    MessageTypeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static MessageTypeEn getEntity(String value) {
         for (MessageTypeEn contentType : values()) {

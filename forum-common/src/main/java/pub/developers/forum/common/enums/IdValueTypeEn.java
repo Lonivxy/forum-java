@@ -1,6 +1,5 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -9,7 +8,6 @@ import lombok.Getter;
  * @desc
  **/
 @Getter
-@AllArgsConstructor
 public enum IdValueTypeEn {
     SYSTEM("SYSTEM", "系统"),
     USER_ID("USER_ID", "用户ID"),
@@ -17,6 +15,15 @@ public enum IdValueTypeEn {
     ;
     private String value;
     private String desc;
+
+    IdValueTypeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
 
     public static IdValueTypeEn getEntity(String value) {
         for (IdValueTypeEn contentType : values()) {

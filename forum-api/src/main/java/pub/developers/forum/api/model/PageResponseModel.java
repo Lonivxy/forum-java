@@ -23,6 +23,18 @@ public class PageResponseModel<T> implements Serializable {
     private Long total;
     private Integer size;
 
+    public void setList(List<T> list) {
+        this.list = list;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     public static <T> PageResponseModel<T> build(Long total, Integer size, List<T> list) {
         PageResponseModel<T> result = new PageResponseModel<>();
         result.setSize(size);

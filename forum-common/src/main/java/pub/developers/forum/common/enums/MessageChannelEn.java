@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/10/22
  * @desc
  **/
-@AllArgsConstructor
-@Getter
 public enum MessageChannelEn {
     STATION_LETTER("STATION_LETTER", "站内信"),
     MAIL("MAIL", "邮件")
@@ -17,6 +12,19 @@ public enum MessageChannelEn {
 
     private String value;
     private String desc;
+
+    MessageChannelEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static MessageChannelEn getEntity(String value) {
         for (MessageChannelEn contentType : values()) {

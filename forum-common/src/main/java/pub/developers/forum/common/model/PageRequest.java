@@ -23,6 +23,18 @@ public class PageRequest<T> {
     private Integer pageNo = DEF_PAGE_NO;
     private T filter;
 
+    public void setPageNo(Integer pageNo) {
+        this.pageNo = pageNo;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public void setFilter(T filter) {
+        this.filter = filter;
+    }
+
     public static <T> PageRequest<T> build(Integer pageNo, Integer pageSize, T filter) {
         PageRequest<T> pageRequest = new PageRequest<>();
         pageRequest.setPageNo(pageNo);

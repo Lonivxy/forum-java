@@ -1,7 +1,5 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import pub.developers.forum.common.exception.BizException;
 
 /**
@@ -9,8 +7,6 @@ import pub.developers.forum.common.exception.BizException;
  * @create 2020/7/30
  * @desc
  **/
-@AllArgsConstructor
-@Getter
 public enum ContentTypeEn {
     HTML("HTML", "html富文本"),
     MARKDOWN("MARKDOWN", "markdown内容"),
@@ -18,6 +14,19 @@ public enum ContentTypeEn {
 
     private String value;
     private String desc;
+
+    ContentTypeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static ContentTypeEn getEntity(String value) {
         for (ContentTypeEn contentType : values()) {

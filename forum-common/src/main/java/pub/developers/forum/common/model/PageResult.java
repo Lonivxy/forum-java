@@ -22,6 +22,18 @@ public class PageResult<T> {
 
     private List<T> list;
 
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public void setList(List<T> list) {
+        this.list = list;
+    }
+
     public static <T> PageResult<T> build(Long total, Integer size, List<T> list) {
         PageResult<T> result = new PageResult<>();
         result.setSize(size);

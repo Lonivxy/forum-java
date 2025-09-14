@@ -1,6 +1,7 @@
 package pub.developers.forum.common.support;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
@@ -16,9 +17,10 @@ import java.util.concurrent.ExecutorService;
  * @create 2020/10/22
  * @desc
  **/
-@Slf4j
 @Component
 public class EventBus {
+
+    private static final Logger log = LoggerFactory.getLogger(EventBus.class);
 
     /**
      * 消息类型枚举

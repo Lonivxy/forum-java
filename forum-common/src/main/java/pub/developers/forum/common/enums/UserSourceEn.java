@@ -1,6 +1,5 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -9,7 +8,6 @@ import lombok.Getter;
  * @desc
  **/
 @Getter
-@AllArgsConstructor
 public enum UserSourceEn {
     /**
      *
@@ -20,6 +18,15 @@ public enum UserSourceEn {
 
     private String value;
     private String desc;
+
+    UserSourceEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
 
     public static UserSourceEn getEntity(String value) {
         for (UserSourceEn en : values()) {

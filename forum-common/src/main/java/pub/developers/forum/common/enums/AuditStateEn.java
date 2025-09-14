@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/10/31
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum AuditStateEn {
     /**
      *
@@ -21,6 +16,19 @@ public enum AuditStateEn {
 
     private String value;
     private String desc;
+
+    AuditStateEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static AuditStateEn getEntity(String value) {
         for (AuditStateEn entity : values()) {

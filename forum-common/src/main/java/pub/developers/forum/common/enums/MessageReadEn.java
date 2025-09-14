@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/12/5
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum MessageReadEn {
     YES("YES", "已读"),
     NO("NO", "未读")
@@ -17,6 +12,19 @@ public enum MessageReadEn {
 
     private String value;
     private String desc;
+
+    MessageReadEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static MessageReadEn getEntity(String value) {
         for (MessageReadEn contentType : values()) {

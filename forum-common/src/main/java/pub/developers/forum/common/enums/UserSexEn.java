@@ -1,6 +1,5 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import pub.developers.forum.common.exception.BizException;
 
@@ -10,7 +9,6 @@ import pub.developers.forum.common.exception.BizException;
  * @desc
  **/
 @Getter
-@AllArgsConstructor
 public enum UserSexEn {
     /**
      *
@@ -22,6 +20,15 @@ public enum UserSexEn {
 
     private String value;
     private String desc;
+
+    UserSexEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
 
     public static UserSexEn getEntity(String value) {
         for (UserSexEn userSexEn : values()) {

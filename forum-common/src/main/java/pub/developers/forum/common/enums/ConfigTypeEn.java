@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/12/26
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum ConfigTypeEn {
 
     /**
@@ -25,6 +20,19 @@ public enum ConfigTypeEn {
 
     private String value;
     private String desc;
+
+    ConfigTypeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static ConfigTypeEn getEntity(String value) {
         for (ConfigTypeEn contentType : values()) {

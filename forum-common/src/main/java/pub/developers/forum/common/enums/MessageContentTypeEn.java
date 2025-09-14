@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/10/22
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum MessageContentTypeEn {
     HTML("HTML", "html"),
     TEXT("TEXT", "text"),
@@ -17,6 +12,19 @@ public enum MessageContentTypeEn {
 
     private String value;
     private String desc;
+
+    MessageContentTypeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static MessageContentTypeEn getEntity(String value) {
         for (MessageContentTypeEn contentType : values()) {

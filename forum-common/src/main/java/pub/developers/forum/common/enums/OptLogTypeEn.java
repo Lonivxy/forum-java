@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/10/20
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum OptLogTypeEn {
     /**
      *
@@ -21,6 +16,19 @@ public enum OptLogTypeEn {
 
     private String value;
     private String desc;
+
+    OptLogTypeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static OptLogTypeEn getEntity(String value) {
         for (OptLogTypeEn userSexEn : values()) {

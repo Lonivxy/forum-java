@@ -1,15 +1,10 @@
 package pub.developers.forum.common.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author Qiangqiang.Bian
  * @create 2020/10/31
  * @desc
  **/
-@Getter
-@AllArgsConstructor
 public enum ArticleTypeScopeEn {
     /**
      *
@@ -19,6 +14,19 @@ public enum ArticleTypeScopeEn {
     ;
     private String value;
     private String desc;
+
+    ArticleTypeScopeEn(String value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 
     public static ArticleTypeScopeEn getEntity(String value) {
         for (ArticleTypeScopeEn entity : values()) {
